@@ -60,16 +60,17 @@ pipeline {
             }
         }
 
-        stage('Monitoring') {
+       stage('Monitoring') {
             steps {
                 echo 'Checking health of the deployed application...'
                 sh '''
                     echo "Waiting for the app to start..."
-                    sleep 20
-                    curl -f http://localhost:3001 || echo " Application is down or unhealthy"
+                    sleep 10
+                    docker exec myapp-production curl -f http://localhost:3000 || echo "❌ Application is down or unhealthy"
                 '''
             }
         }
+
     }
 
     post {
