@@ -332,6 +332,7 @@ app.use((request, response, next) => {
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+app.listen(3000, '0.0.0.0', () => {
+  console.log('App listening on port 3000');
 });
+

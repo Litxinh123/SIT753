@@ -65,8 +65,8 @@ pipeline {
                 echo 'Checking health of the deployed application...'
                 sh '''
                     echo "Waiting for the app to start..."
-                    sleep 8
-                    curl -f http://localhost:3001 || echo "⚠️ Application is down or unhealthy"
+                    sleep 20
+                    curl -f http://localhost:3001 || echo " Application is down or unhealthy"
                 '''
             }
         }
